@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-
   node-service:
     build: ./docker/api
     environment:
@@ -15,6 +14,8 @@ services:
       - db
     networks:
       - mynetwork
+    deploy:
+      replicas: 3
 
   db:
     image: mariadb:latest
